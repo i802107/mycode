@@ -40,8 +40,15 @@ def main():
     # Get values of parameters from module params
     amount = module.params['amount']
     difficulty = module.params['difficulty']
-    if amount is None:
-        amount = 7
+    if amount is not None:
+        pass
+    else:
+        amount = 5
+        pass
+    if difficulty is None:
+        pass
+    else:
+        difficulty = "hard"
     # Fetch trivia questions using the custom function
     questions = fetch_trivia_questions(amount, difficulty)
     result['questions'] = questions
